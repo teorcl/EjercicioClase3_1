@@ -17,10 +17,6 @@ class TaskOneViewController: UIViewController {
     @IBOutlet weak var counterLabel: UILabel!
     var counter = 1
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     @IBAction func continueButtonPressed(_ sender: UIButton) {
         count()
     }
