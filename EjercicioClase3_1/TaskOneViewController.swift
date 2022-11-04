@@ -9,7 +9,10 @@ import UIKit
 
 class TaskOneViewController: UIViewController {
     
-    
+    struct Const{
+        static let initialValue = 1
+        static let lastValue = 10
+    }
 
     @IBOutlet weak var counterLabel: UILabel!
     var counter = 1
@@ -19,16 +22,26 @@ class TaskOneViewController: UIViewController {
     }
 
     @IBAction func continueButtonPressed(_ sender: UIButton) {
-        if counter >= 10 {
-            counter = 1
-            counterLabel.text = "\(counter)"
+        count()
+    }
+    
+    func count(){
+        if counter >= Const.lastValue {
+            restartCounter()
+            showCounter(counter: counter)
         }else{
             counter += 1
-            counterLabel.text = "\(counter)"
+            showCounter(counter: counter)
         }
     }
     
+    func restartCounter(){
+        counter = Const.initialValue
+    }
     
+    func showCounter(counter:Int){
+        counterLabel.text = "\(counter)"
+    }
     
 }
 
