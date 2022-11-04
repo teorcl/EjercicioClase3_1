@@ -24,11 +24,12 @@ class TaskOneViewController: UIViewController {
     func count(){
         if counter >= Const.lastValue {
             restartCounter()
-            showCounter(counter: counter)
-        }else{
-            counter += 1
-            showCounter(counter: counter)
         }
+        else {
+            counter += 1
+        }
+        
+        showCounter(counter: counter)
     }
     
     func restartCounter(){
